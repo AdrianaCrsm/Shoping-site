@@ -1,0 +1,227 @@
+/*- font suggestions: Seravek
+
+- colors:
+    - pink: #f8d9e0
+    - dark grey: #333333
+    - light grey: #e7e8e9
+    - text grey: #828282*/
+
+    body{
+        margin:0px;        
+    }
+    body > div{
+        margin:0px;
+        height:100%;
+    }
+ /*----Header---*/
+ header{
+     width: 100%;
+     height: 350px;
+     background-image: url("../assets/header.jpg");
+     background-size: cover;
+     background-position: 50% 70%;
+     display:flex;
+ }
+ .shop-title-wrapper{
+     width:49%;
+     color:#fff;
+     margin: 80px 60px 10px 80px;
+ }
+ .shop-title{
+     font-size:50px;
+ }
+ .shop-collection{
+     font-size:20px;
+     margin-top:10px;
+ }
+ .shop-btn{
+     color:#000;
+     background-color: #fff;
+     padding:15px 35px;
+     border-radius: 24px;
+     width: 60px;
+     margin-top:20px;
+ }
+ .shop-btn a{
+    text-decoration:none;
+    color:#000;
+ }
+ .pig-img-wrapper img,
+ .product-img-wrapper img,
+ .close-overlay img{
+     width: 100%;
+     height: 100%;
+ }
+.pig-img-wrapper{
+    padding-left:40px;
+    padding-top:60px;
+}
+/*---main----*/
+.clothes-type-wrapper{
+    width: 40%;
+    margin:45px auto;
+    display:flex;
+    justify-content: space-between;
+    color:#000;
+    font-size: 18px;
+}
+.clothes-type-wrapper div{
+    padding:10px 25px;
+}
+.clothes-type-selected{
+    background-color: #f8d9e0;
+    border-radius: 24px;
+}
+.products-wrapper{
+    margin: 2%;
+    display:flex;
+    justify-content: space-between;
+}
+.single-product{
+    width: 20%;
+}
+.product-img-wrapper{
+    width: 280px;
+    height: 420px;
+}
+.product-informations{
+    margin-top:15px;
+    display:flex;
+    justify-content: space-between;
+}
+.product-price{
+    color: #828282;
+}
+/*------footer---*/
+footer{
+    margin: 40px 2% 80px 2%;
+}
+.title-footer{
+    font-size: 30px;
+    margin-bottom:30px;
+}
+.categories{
+    display:flex;
+    justify-content: space-between;
+}
+.categories div{
+    width: 270px;
+    text-align: center;
+    background-color: #e7e8e9 ;
+   padding-top:30px;
+   padding-bottom:30px;
+   border-radius:20px;
+}
+/*----overlay----*/
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .6);
+    
+    display: none;
+}
+
+.overlay-content {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+}
+.overlay-img-wrapper {
+    width: 500px;
+    height: 700px;
+    background-color: rgb(230, 227, 227);
+    background-repeat: repeat;
+    background-size: 50% 50%;
+    
+}
+.overlay-info-wrapper{
+    background-color: #fff;
+    border-radius: 24px;
+    margin-top:220px;
+    padding-left:20px;
+    padding-bottom:20px;
+}
+.close-overlay{
+    width: 50px;
+    height: 50px;
+    position:absolute;
+    top:40px;
+    right:40px;
+}
+
+.title-info{
+    padding-top:30px;
+    font-size:28px;
+}
+.price-info{
+    font-size: 22px;
+    color: #828282;
+}
+.title-size{
+    font-size: 20px;
+    margin-top:15px;
+}
+.size-info{
+    margin-top:5px;
+    display: flex;
+}
+.size-info div{
+    margin-right:10px;
+    padding:5px;
+    border:1px #828282 solid;
+}
+.buttons-info{
+    margin-top: 60px;
+    margin-right:15px;
+    display:flex;
+    justify-content: space-between;
+}
+.buttons-info div{
+    background-color: #e7e8e9 ;
+    padding-top: 10px ;
+    padding-bottom: 10px;
+    border-radius: 18px;
+    width: 120px;
+    text-align: center;
+}
+.buttons-info div.selected{
+    background-color: #f8d9e0;
+}
+.comp-info-wrapper{
+    margin-top:40px;
+    font-size: 18px;
+    margin-right:20px;
+}
+.comp-info{
+    display:flex;
+    justify-content: space-between;
+}
+.grey{
+    color:#828282;
+}
+.more-info div:first-child{
+    margin-top:20px;
+    font-size: 22px;
+    margin-bottom:15px;
+}
+.add-button{
+    width: 85%;
+    margin:auto;
+    text-align: center;
+    color:#fff;
+    background-color: rgb(32, 32, 32);
+    font-size:20px;
+    margin-top:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius: 18px;
+
+}
