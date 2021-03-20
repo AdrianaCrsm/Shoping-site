@@ -66,6 +66,7 @@ $(function(){
         overlayHTML= "" ;
         for(let j=0; j<products.coats.length;j++){
             if(products.coats[j].id==pId)
+            // nu ai nevoie sa recreezi modalul de fiecare data cand dai click. poti sa folosesti structura deja adaugata in html si cu selectiile de rigoare sa adaugi datele dinamic
             overlayHTML = getOverlayHTML(products.coats[j]); 
         }
         console.log(pId);
