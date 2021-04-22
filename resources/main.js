@@ -4,7 +4,10 @@ $(function(){
         return `
         <div class="single-product " data-id="${productsObj.id}">
             <div class="product-img-wrapper" data-id="${productsObj.id}" data-img=${productsObj.imgUrl}>
-                <img src="assets/coats/${productsObj.imgUrl}">
+                <img src="assets/coats/${productsObj.imgUrl}" class="store-img">
+                <span class="store-item-icon">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                </span>
             </div>
             <div class="product-informations">
                 <div class="product-title">${productsObj.name}</div>
@@ -19,10 +22,10 @@ $(function(){
         <div class="price-info">$${overlayObj.price}</div>
         <div class="title-size">Your Size</div>
         <div class="size-info">
-            <div>S</div>
-            <div>M</div>
-            <div>L</div>
-            <div>XL</div>
+            <div class="size-btn ">S</div>
+            <div class="size-btn">M</div>
+            <div class="size-btn">L</div>
+            <div class="size-btn">XL</div>
         </div>
         <div class="buttons-info">
             <div class="selected">
@@ -53,6 +56,9 @@ $(function(){
     </div>
         `;
     }
+    $('.cart-btn').click(function(){
+        $('#cart-info').toggleClass("show-cart,hide-cart");
+    });
 
     for(let i=0; i<products.coats.length;i++){
         productsObj=products.coats[i];
@@ -77,7 +83,20 @@ $(function(){
         event.stopPropagation();
     });
     $('.close-overlay').click(function(){
-        $('.overlay').fadeOut();
+       $('.overlay').fadeOut();
     });
-
+    
+   /* var btnSize=$('.size-btn');
+    for(var i=0;i<btnSize.length;i++){
+        btnSize[i].click(function(){
+            var sizeElemSelected=$('.active');
+            if(sizeElemSelected.length > 0)
+                sizeElemSelected[0]=sizeElemSelected[0].removeClass("active");
+            btnSize[i].addClass('active');
+        });
+    }*/
+    $('body').on('click','size-btn',function(){
+        $('.size-btn.active').removeClass('active');
+        $(this).addClass('active');
+    })
 });

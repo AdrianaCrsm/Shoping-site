@@ -7,10 +7,51 @@
         <meta name="keywords" content="travel">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link  rel="stylesheet" type="text/css" href="resources/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     </head>
     <body>
         <div>
             <header>
+               
+                   <div class="cart-btn">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <div>0 items - $price</div>
+                    </div>
+                    <div id="cart-info" class="cart">
+                        <div class="add-product-cart" data-id="1">
+                            <div class="add-product-img-wrapper">
+                                <img src="assets/coats/coat-1.jpg">
+                            </div>
+                            <div class="add-product-info-wrapper">
+                                <div class="product-title">Name</div>
+                                <div class="product-price">Price</div>
+                            </div>
+                            <div class="icon-trash-wrapper">
+                                <i class="fas fa-trash fa-lg"></i>
+                            </div>
+                        </div>
+                        <div class="add-product-cart" data-id="1">
+                            <div class="add-product-img-wrapper">
+                                <img src="assets/coats/coat-1.jpg">
+                            </div>
+                            <div class="add-product-info-wrapper">
+                                <div class="product-title">Name</div>
+                                <div class="product-price">Price</div>
+                            </div>
+                            <div class="icon-trash-wrapper">
+                                <i class="fas fa-trash fa-lg"></i>
+                            </div>
+                        </div>
+                        <div class="cart-footer-btns">
+                            <div class="clear-btn">
+                                    CLEAR CART
+                            </div>
+                            <div class="buy-btn">
+                                BUY
+                            </div>
+                        </div>
+                    </div>
+               
                 <div class="shop-title-wrapper">
                     <div class="shop-title">
                         <div>SHOP AT</div>
@@ -25,14 +66,14 @@
                         </div>
                     </div>
                     <div class="shop-btn">
-                        <a href="#">SHOP</a>
+                        <a href="#main-section">SHOP</a>
                     </div>
                 </div>
                 <div class="pig-img-wrapper">
                     <img src="assets/icon-piggy-bank.png">
                 </div>
             </header>
-            <main>
+            <main id="main-section">
                 <section>
                     <div class="clothes-type-wrapper">
                         <!-- aici ar corect din punct de vedere semantic sa avem butoane sau link-uri pentru ca sunt call-to-action -->
@@ -54,7 +95,10 @@
                     <div class="products-wrapper">
                         <!--<div class="single-product data-id=1">
                             <div class="product-img-wrapper">
-                                <img src="assets/coats/coat-1.jpg">
+                                <img src="assets/coats/coat-1.jpg" class="store-img">
+                                <span class="store-item-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
                             </div>
                             <div class="product-informations">
                                 <div class="product-title">Top Coat</div>
@@ -81,11 +125,11 @@
                             <div class="title-info">Blazer Coat</div>
                             <div class="price-info">$60</div>
                             <div class="title-size">Your Size</div>
-                            <div class="size-info">
-                                <div>S</div>
-                                <div>M</div>
-                                <div>L</div>
-                                <div>XL</div>
+                            <div class="size-info" id="size">
+                                <div class="size-btn ">S</div>
+                                <div class="size-btn">M</div>
+                                <div class="size-btn">L</div>
+                                <div class="size-btn">XL</div>
                             </div>
                             <div class="buttons-info">
                             <!-- semantic, si acestea sunt button -->
