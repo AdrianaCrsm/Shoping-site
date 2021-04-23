@@ -57,7 +57,11 @@
      max-height: 450px;
      z-index:2;
      transition: all 2s ease-in-out;
+    
 
+ }
+ .cart-added{
+    overflow: hidden;
  }
  .add-product-cart{
      display:flex;
@@ -101,6 +105,9 @@
 }
 .hide-cart{
     animation:fadeout 1s;
+}
+.hide{
+    display: hidden;
 }
 .show-cart {
     visibility: visible;
@@ -385,4 +392,12 @@ footer{
     padding-bottom:10px;
     border-radius: 18px;
 
+}
+.add-button:hover{
+    cursor:pointer;
+    background-color: rgb(110, 105, 105);
+}
+.alert-size{
+    background-color: rgb(255, 111, 111);
+    color:black;
 }

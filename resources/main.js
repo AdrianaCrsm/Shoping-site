@@ -1,3 +1,6 @@
+mystorage=window.localStorage;
+myShopingCart= []; 
+totalPrice =0;
 $(function(){
     getHTML = function (productsObj)
     {
@@ -17,15 +20,16 @@ $(function(){
         `;
     }
     getOverlayHTML = function(overlayObj){
-        return `<div class="overlay-info-wrapper">
+        return `<div class="overlay-info-wrapper" data-id="${overlayObj.id}">
         <div class="title-info">${overlayObj.name}</div>
         <div class="price-info">$${overlayObj.price}</div>
         <div class="title-size">Your Size</div>
         <div class="size-info">
-            <div class="size-btn ">S</div>
+            <div class="size-btn">S</div>
             <div class="size-btn">M</div>
             <div class="size-btn">L</div>
             <div class="size-btn">XL</div>
+            <div class="alert-size hide">Select your size!</div>
         </div>
         <div class="buttons-info">
             <div class="selected">
@@ -56,6 +60,25 @@ $(function(){
     </div>
         `;
     }
+    getAddCartHTML= function(addCartObj){
+        return `
+        <div class="add-product-cart" data-id="${addCartObj.id}">
+            <div class="add-product-img-wrapper">
+                <img src="assets/coats/${addCartObj.imgUrl}">
+            </div>
+            <div class="add-product-info-wrapper">
+                <div class="product-title">${addCartObj.name}</div>
+                <div class="product-price">$${addCartObj.price}</div>
+            </div>
+                <div class="icon-trash-wrapper">
+                    <i class="fas fa-trash fa-lg"></i>
+                </div>
+            </div>`;
+    }
+    itemsBtnHTML=function(totalItems,totalPrice){
+        return ` <i class="fas fa-shopping-cart fa-lg"></i>
+        <div>${totalItems} items - $${totalPrice}</div>`;
+    }
     $('.cart-btn').click(function(){
         $('#cart-info').toggleClass("show-cart,hide-cart");
     });
@@ -77,7 +100,37 @@ $(function(){
         }
         console.log(pId);
         $('.overlay-img-wrapper').html(overlayHTML);
+        $('.size-btn').click(function(){
+            $('.size-btn.active').removeClass('active');
+            $(this).addClass('active');
+        })
         $('.overlay').fadeIn();
+
+        if(!$('.size-btn.active').length >=1){
+            $('.alert-size').hide();
+        }
+        $('.add-button').click(function(){
+            console.log("falala")
+            let currentId=$(this).parent().data('id');
+            myShopingCart.push(currentId);
+            for(let i=0;i<myShopingCart.length;i++){
+                var currentProductCart = myShopingCart[i];
+                if(currentProductCart==currentId)
+                    {
+                        let productCart = products.coats[currentProductCart-1];
+                        $('.cart-added').after(getAddCartHTML(productCart));
+                        totalPrice += parseFloat(productCart.price);
+                        
+                
+                    }
+                
+                
+            }
+            console.log(myShopingCart);
+            console.log(totalPrice);
+            var totalItems = myShopingCart.length;
+            $('.cart-btn').html(itemsBtnHTML(totalItems,totalPrice));
+        });
     });
     $('.overlay-img-wrapper').click(function(event){
         event.stopPropagation();
@@ -95,8 +148,5 @@ $(function(){
             btnSize[i].addClass('active');
         });
     }*/
-    $('body').on('click','size-btn',function(){
-        $('.size-btn.active').removeClass('active');
-        $(this).addClass('active');
-    })
+    
 });
